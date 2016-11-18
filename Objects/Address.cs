@@ -23,5 +23,17 @@ namespace AddressBook.Objects
     {
       return _addresses[searchId];
     }
+    public string GetStreet()
+    {
+      return _street;
+    }
+    public string GetCity()
+    {
+      return _city;
+    }
+    public string GetState()
+    {
+      return _state;
+    }
   }
 }
