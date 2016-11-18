@@ -35,9 +35,9 @@ namespace AddressBook
         var viewAll = Contact.GetAllContacts();
         return View["index.cshtml", viewAll];
       };
-      Post["/contacts/search"] =_=>
+      Post["/search"] =_=>
       {
-        search = Request.Form["searchContact"];
+        var search = Request.Form["searchContact"];
         List<Contact> matchingContacts = Contact.FilterContact(search);
         return View["index.cshtml", matchingContacts];
       };

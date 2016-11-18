@@ -13,7 +13,9 @@ namespace AddressBook.Objects
 
     public Contact(string name, string address, string phoneNumber, string details)
     {
-      _name = name;
+      TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+      string titleName = textInfo.ToTitleCase(name);
+      _name = titleName;
       _address = address;
       _phoneNumber = phoneNumber;
       _details = details;
@@ -59,15 +61,17 @@ namespace AddressBook.Objects
     }
     public static List<Contact> FilterContact(string searchContact)
     {
+      TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+      string searchName = textInfo.ToTitleCase(searchContact);
       List<Contact> matches = new List<Contact> {};
       foreach(Contact c in _contacts)
       {
-        if(c._name == searchContact)
+        if(c._name == searchName)
         {
           matches.Add(c);
         }
       }
-      return matches
+      return matches;
     }
   }
 }
