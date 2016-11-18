@@ -8,7 +8,8 @@ namespace AddressBook
   {
     public HomeModule()
     {
-      Get[]
+      Get["/"] = _ => View["index.cshtml"];
+      
     }
   }
 }
