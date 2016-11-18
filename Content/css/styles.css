@@ -1,0 +1,10 @@
+body {
+  background-color: lightblue;
+}
+
+.container{
+  background-color: lightgray;
+  text-align: center;
+  margin-top: 10%;
+  padding: 10px;
+}

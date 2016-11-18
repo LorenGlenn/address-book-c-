@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/Content/css/styles.css">
     <meta charset="utf-8">
     <title>Address Book</title>
   </head>
   <body>
-    <h1>Here are your contacts:</h1>
-    <form action="/search" method="post">
-      <label for="searchContact">Search for a contact:</label>
-      <input type="text" name="searchContact" id="searchContact">
-      <button type="submit">Search</button>
-    </form>
-    <ul>
-      @foreach (var c in Model)
-      {
-        <a href = "contacts/@c.GetId()/view-details">
-          <li>@c.GetName()</li>
-        </a>
-      }
-    </ul>
-    <a href="/contacts/new">Create a new contact!</a>
-    <form action="/contacts/clear" method="post">
-      <button type="submit">Clear your contacts</button>
-    </form>
+    <div class="container">
+      <h1>Welcome to your Address Book!</h1>
+      <form action="/search" method="post">
+        <label for="searchContact">Search for a contact:</label>
+        <input type="text" name="searchContact" id="searchContact">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <div class="container">
+      <h3>Here are your contacts:</h3>
+      <ul>
+        @foreach (var c in Model)
+        {
+          <a href = "contacts/@c.GetId()/view-details">
+            <li>@c.GetName()</li>
+          </a>
+        }
+      </ul>
+      <a href="/contacts/new">Create a new contact!</a>
+      <form action="/contacts/clear" method="post">
+        <button type="submit">Clear your contacts</button>
+      </form>
+    </div>
   </body>
 </html>
