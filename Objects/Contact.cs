@@ -5,22 +5,23 @@ namespace AddressBook.Objects
   public class Contact
   {
     private string _name;
-    private string _address;
+    private Address _address;
     private string _phoneNumber;
     private string _details;
     private int _id;
     private static List<Contact> _contacts = new List<Contact> {};
 
-    public Contact(string name, string address, string phoneNumber, string details)
+    public Contact(string name, string phoneNumber, string details, string street, string city, string state)
     {
       TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
       string titleName = textInfo.ToTitleCase(name);
       _name = titleName;
-      _address = address;
+      _address = Address newAddress = new Address(street, city, state);
       _phoneNumber = phoneNumber;
       _details = details;
       _id = _contacts.Count;
       _contacts.Add(this);
+
     }
 
     public string GetName()

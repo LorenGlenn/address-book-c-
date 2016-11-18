@@ -8,16 +8,15 @@ namespace AddressBook.Objects
     private string _city;
     private string _state;
     private int _id;
-    private static List<Contact> _contacts = new List<Contact> {};
+    private static List<Address> _addresses = new List<Address> {};
 
-    public Contact(string name, string address, string phoneNumber, string details)
+    public Contact(string street, string city, string state)
     {
-      _name = name;
-      _address = address;
-      _phoneNumber = phoneNumber;
-      _details = details;
-      _id = _contacts.Count;
-      _contacts.Add(this);
+      _street = street;
+      _city = city;
+      _state = state;
+      _id = _addresses.Count;
+      _addresses.Add(this);
     }
   }
 }
