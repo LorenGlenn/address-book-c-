@@ -17,7 +17,7 @@
     </div>
     <div class="container">
       <h3>Here are your contacts:</h3>
-      <ul>
+      <ul id="home-ul">
         @foreach (var c in Model)
         {
           <a href = "contacts/@c.GetId()/view-details">
@@ -25,10 +25,17 @@
           </a>
         }
       </ul>
-      <a href="/contacts/new">Create a new contact!</a>
-      <form action="/contacts/clear" method="post">
-        <button type="submit">Clear your contacts</button>
-      </form>
+      <br>
+      <div class="row">
+        <div class="col-sm-3 col-sm-offset-3">
+          <a class="button" href="/contacts/new">Create a new contact!</a>
+        </div>
+        <div class="col-sm-3">
+          <form action="/contacts/clear" method="post">
+            <button type="submit">Clear your contacts</button>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>

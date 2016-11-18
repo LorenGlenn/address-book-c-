@@ -3,8 +3,25 @@ body {
 }
 
 .container{
-  background-color: lightgray;
+  background-color: papayawhip;
   text-align: center;
   margin-top: 10%;
   padding: 10px;
+  border-radius: 5px;
+}
+
+#home-ul {
+  display: inline-block;
+  text-align: center;
+}
+
+a.button {
+  appearance: button;
+  -webkit-appearance: button;
+  padding: 3px;
+  color: black;
+}
+
+#added-ul, #view-ul {
+  text-align: left;
 }

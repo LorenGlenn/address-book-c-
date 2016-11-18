@@ -7,32 +7,35 @@
     <title>New Contact</title>
   </head>
   <body>
-    <form action="/contacts/contact-added" method="post">
-      <div class="form-group">
-        <label for="name">Contact name:</label>
-        <input type="text" name="name" id="name">
-      </div>
-      <div class="form-group">
-        <label for="phone">Contact phone:</label>
-        <input type="text" name="phone" id="phone">
-      </div>
-      <div class="form-group">
-        <label for="details">Contact details:</label>
-        <input type="text" name="details" id="details">
-      </div>
-      <div class="form-group">
-        <label for="street">Contact street:</label>
-        <input type="text" name="street" id="street">
-      </div>
-      <div class="form-group">
-        <label for="city">Contact city:</label>
-        <input type="text" name="city" id="city">
-      </div>
-      <div class="form-group">
-        <label for="state">Contact state:</label>
-        <input type="text" name="state" id="state">
-      </div>
-      <button type="submit" name="button">Submit</button>
-    </form>
+    <div class="container">
+      <h1>Add your new contact's information:</h1>
+      <form action="/contacts/contact-added" method="post">
+        <div class="form-group">
+          <label for="name">Contact name:</label>
+          <input type="text" name="name" id="name">
+        </div>
+        <div class="form-group">
+          <label for="phone">Contact phone:</label>
+          <input type="text" name="phone" id="phone">
+        </div>
+        <div class="form-group">
+          <label for="details">Contact details:</label>
+          <input type="text" name="details" id="details">
+        </div>
+        <div class="form-group">
+          <label for="street">Contact street:</label>
+          <input type="text" name="street" id="street">
+        </div>
+        <div class="form-group">
+          <label for="city">Contact city:</label>
+          <input type="text" name="city" id="city">
+        </div>
+        <div class="form-group">
+          <label for="state">Contact state:</label>
+          <input type="text" name="state" id="state">
+        </div>
+        <button type="submit" name="button">Submit</button>
+      </form>
+    </div>
   </body>
 </html>

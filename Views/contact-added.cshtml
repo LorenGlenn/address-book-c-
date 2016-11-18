@@ -7,19 +7,20 @@
     <title>Contact Added</title>
   </head>
   <body>
-    <h1>You've added a contact!</h1>
-    <ul>
-      <li>@Model["contact"].GetName()
-        <ul>
-          <li>@Model["contact"].GetPhoneNumber()</li>
-          <li>@Model["contact"].GetDetails()</li>
-          <li>@Model["address"].GetStreet()</li>
-          <li>@Model["address"].GetCity()</li>
-          <li>@Model["address"].GetState()</li>
-        </ul>
-      </li>
-    </ul>
-
-    <a href="/">Return to Address Book</a>
+    <div class="container">
+      <h1>You've added a contact!</h1>
+      <ul id="added-ul">
+        <li>Name: @Model["contact"].GetName()
+          <ul>
+            <li>Phone: @Model["contact"].GetPhoneNumber()</li>
+            <li>Details: @Model["contact"].GetDetails()</li>
+            <li>Street: @Model["address"].GetStreet()</li>
+            <li>City: @Model["address"].GetCity()</li>
+            <li>State: @Model["address"].GetState()</li>
+          </ul>
+        </li>
+      </ul>
+      <a class="button" href="/">Return to Address Book</a>
+    </div>
   </body>
 </html>
