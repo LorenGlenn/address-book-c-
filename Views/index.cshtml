@@ -9,12 +9,14 @@
     <ul>
       @foreach (var c in Model)
       {
-        <li>@c.GetName()
-          <ul>
-            <li>@c.GetAddress()</li>
-            <li>@c.GetPhoneNumber()</li>
-          </ul>
-        </li>
+        <a href = "contacts/@c.GetId()/view-details">
+          <li>@c.GetName()
+            <ul>
+              <li>@c.GetAddress()</li></a>
+              <li>@c.GetPhoneNumber()</li>
+            </ul>
+          </li>
+        </a>
       }
     </ul>
     <a href="/contacts/new">Create a new contact!</a>
