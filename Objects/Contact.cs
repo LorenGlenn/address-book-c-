@@ -53,9 +53,21 @@ namespace AddressBook.Objects
     {
       _contacts.Clear();
     }
-    public void DeleteContact()
+    public static void DeleteContact(int searchId)
     {
-      _contacts.[searchId].Remove();
+      _contacts.RemoveAt(searchId);
+    }
+    public static List<Contact> FilterContact(string searchContact)
+    {
+      List<Contact> matches = new List<Contact> {};
+      foreach(Contact c in _contacts)
+      {
+        if(c._name == searchContact)
+        {
+          matches.Add(c);
+        }
+      }
+      return matches
     }
   }
 }

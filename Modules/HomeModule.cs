@@ -31,11 +31,16 @@ namespace AddressBook
       };
       Post["/contacts/{id}/remove"] = parameters =>
       {
-        var contactToDelete = Contact.Find(parameters.id);
-        contactToDelete.DeleteContact();
+        Contact.DeleteContact(parameters.id);
         var viewAll = Contact.GetAllContacts();
         return View["index.cshtml", viewAll];
-      }
+      };
+      Post["/contacts/search"] =_=>
+      {
+        search = Request.Form["searchContact"];
+        List<Contact> matchingContacts = Contact.FilterContact(search);
+        return View["index.cshtml", matchingContacts];
+      };
     }
   }
 }
