@@ -11,13 +11,13 @@
         <ul>
           <li>@Model["contact"].GetPhoneNumber()</li>
           <li>@Model["contact"].GetDetails()</li>
-          <li>@Model["address"].GetDetails()</li>
-          <li>@Model["address"].GetDetails()</li>
-          <li>@Model["address"].GetDetails()</li>
+          <li>@Model["address"].GetStreet()</li>
+          <li>@Model["address"].GetCity()</li>
+          <li>@Model["address"].GetState()</li>
         </ul>
       </li>
     </ul>
-    <form action="/contacts/@Model.GetId()/remove" method="post">
+    <form action='/contacts/@Model["contact"].GetId()/remove' method="post">
       <button type="submit">Delete this contact</button>
     </form>
     <a href="/">Return to Address Book</a>

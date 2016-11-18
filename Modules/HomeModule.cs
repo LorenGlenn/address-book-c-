@@ -18,7 +18,10 @@ namespace AddressBook
       {
         Contact newContact = new Contact(Request.Form["name"], Request.Form["phone"], Request.Form["details"]);
         Address newAddress = new Address(Request.Form["street"], Request.Form["city"], Request.Form["state"]);
-        return View["contact-added.cshtml", newContact];
+        Dictionary<string, object> model = new Dictionary<string, object>();
+        model.Add("contact", newContact);
+        model.Add("address", newAddress);
+        return View["contact-added.cshtml", model];
       };
       Get["/contacts/{id}/view-details"] = parameters =>
       {

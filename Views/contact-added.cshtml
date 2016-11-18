@@ -7,10 +7,13 @@
   <body>
     <h1>You've added a contact!</h1>
     <ul>
-      <li>@Model.GetName()
+      <li>@Model["contact"].GetName()
         <ul>
-          <li>@Model.GetPhoneNumber()</li>
-          <li>@Model.GetDetails()</li>
+          <li>@Model["contact"].GetPhoneNumber()</li>
+          <li>@Model["contact"].GetDetails()</li>
+          <li>@Model["address"].GetStreet()</li>
+          <li>@Model["address"].GetCity()</li>
+          <li>@Model["address"].GetState()</li>
         </ul>
       </li>
     </ul>
