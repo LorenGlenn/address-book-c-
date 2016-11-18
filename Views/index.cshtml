@@ -10,12 +10,7 @@
       @foreach (var c in Model)
       {
         <a href = "contacts/@c.GetId()/view-details">
-          <li>@c.GetName()
-            <ul>
-              <li>@c.GetAddress()</li></a>
-              <li>@c.GetPhoneNumber()</li>
-            </ul>
-          </li>
+          <li>@c.GetName()</li>
         </a>
       }
     </ul>
