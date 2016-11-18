@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New Contact</title>
+  </head>
+  <body>
+    <form action="/contacts/contact-added" method="post">
+      <div class="form-group">
+        <label for="name">Contact name:</label>
+        <input type="text" name="name" id="name">
+      </div>
+      <div class="form-group">
+        <label for="address">Contact address:</label>
+        <input type="text" name="address" id="address">
+      </div>
+      <div class="form-group">
+        <label for="phone">Contact phone:</label>
+        <input type="text" name="phone" id="phone">
+      </div>
+      <div class="form-group">
+        <label for="details">Contact details:</label>
+        <input type="text" name="details" id="details">
+      </div>
+      <button type="submit" name="button">Submit</button>
+    </form>
+  </body>
+</html>

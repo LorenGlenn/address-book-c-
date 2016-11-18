@@ -37,7 +37,7 @@ namespace AddressBook.Objects
     {
       return _details;
     }
-    public string GetId()
+    public int GetId()
     {
       return _id;
     }
