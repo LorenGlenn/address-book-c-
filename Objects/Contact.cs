@@ -49,9 +49,13 @@ namespace AddressBook.Objects
     {
       return _contacts[searchId];
     }
-    public void ClearContacts()
+    public static void ClearContacts()
     {
       _contacts.Clear();
+    }
+    public void DeleteContact()
+    {
+      _contacts.[searchId].Remove();
     }
   }
 }

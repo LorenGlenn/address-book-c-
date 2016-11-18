@@ -24,10 +24,17 @@ namespace AddressBook
         var selectedContact = Contact.Find(parameters.id);
         return View["view-details.cshtml", selectedContact];
       };
-      Post["/contacts/clear"]
+      Post["/contacts/clear"] =_=>
       {
-        Contact.ClearAll();
+        Contact.ClearContacts();
         return View["cleared.cshtml"];
+      };
+      Post["/contacts/{id}/remove"] = parameters =>
+      {
+        var contactToDelete = Contact.Find(parameters.id);
+        contactToDelete.DeleteContact();
+        var viewAll = Contact.GetAllContacts();
+        return View["index.cshtml", viewAll];
       }
     }
   }
