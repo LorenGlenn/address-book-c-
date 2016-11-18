@@ -49,5 +49,9 @@ namespace AddressBook.Objects
     {
       return _contacts[searchId];
     }
+    public void ClearContacts()
+    {
+      _contacts.Clear();
+    }
   }
 }

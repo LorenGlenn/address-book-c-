@@ -21,9 +21,14 @@ namespace AddressBook
       };
       Get["/contacts/{id}/view-details"] = parameters =>
       {
-        selectedContact = Contact.Find(parameters.id);
+        var selectedContact = Contact.Find(parameters.id);
         return View["view-details.cshtml", selectedContact];
       };
+      Post["/contacts/clear"]
+      {
+        Contact.ClearAll();
+        return View["cleared.cshtml"];
+      }
     }
   }
 }
