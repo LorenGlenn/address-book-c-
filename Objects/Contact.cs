@@ -1,22 +1,21 @@
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace AddressBook.Objects
 {
   public class Contact
   {
     private string _name;
-    private Address _address;
     private string _phoneNumber;
     private string _details;
     private int _id;
     private static List<Contact> _contacts = new List<Contact> {};
 
-    public Contact(string name, string phoneNumber, string details, string street, string city, string state)
+    public Contact(string name, string phoneNumber, string details)
     {
       TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
       string titleName = textInfo.ToTitleCase(name);
       _name = titleName;
-      _address = Address newAddress = new Address(street, city, state);
       _phoneNumber = phoneNumber;
       _details = details;
       _id = _contacts.Count;
@@ -27,10 +26,6 @@ namespace AddressBook.Objects
     public string GetName()
     {
       return _name;
-    }
-    public string GetAddress()
-    {
-      return _address;
     }
     public string GetPhoneNumber()
     {

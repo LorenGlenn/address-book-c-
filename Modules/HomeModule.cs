@@ -16,13 +16,18 @@ namespace AddressBook
       Get["/contacts/new"] =_=> View["new-contact-form.cshtml"];
       Post["/contacts/contact-added"] =_=>
       {
-        Contact newContact = new Contact(Request.Form["name"], Request.Form["phone"], Request.Form["details"], Request.Form["street"], Request.Form["city"], Request.Form["state"]);
+        Contact newContact = new Contact(Request.Form["name"], Request.Form["phone"], Request.Form["details"]);
+        Address newAddress = new Address(Request.Form["street"], Request.Form["city"], Request.Form["state"]);
         return View["contact-added.cshtml", newContact];
       };
       Get["/contacts/{id}/view-details"] = parameters =>
       {
+        Dictionary<string, object> model = new Dictionary<string, object>();
         var selectedContact = Contact.Find(parameters.id);
-        return View["view-details.cshtml", selectedContact];
+        var contactAddress = Address.Find(parameters.id);
+        model.Add("contact", selectedContact);
+        model.Add("address", contactAddress);
+        return View["view-details.cshtml", model];
       };
       Post["/contacts/clear"] =_=>
       {

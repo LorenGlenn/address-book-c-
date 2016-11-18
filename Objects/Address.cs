@@ -10,13 +10,18 @@ namespace AddressBook.Objects
     private int _id;
     private static List<Address> _addresses = new List<Address> {};
 
-    public Contact(string street, string city, string state)
+    public Address(string street, string city, string state)
     {
       _street = street;
       _city = city;
       _state = state;
       _id = _addresses.Count;
       _addresses.Add(this);
+    }
+
+    public static Address Find(int searchId)
+    {
+      return _addresses[searchId];
     }
   }
 }
