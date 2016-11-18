@@ -13,6 +13,7 @@ body {
 #home-ul {
   display: inline-block;
   text-align: center;
+  padding-bottom: 50px;
 }
 
 a.button {
@@ -24,4 +25,8 @@ a.button {
 
 #added-ul, #view-ul {
   text-align: left;
+}
+
+#contacts-header {
+  padding-bottom: 50px;
 }
